@@ -49,8 +49,8 @@ const getForm = () => {
 // // // sort button  2 Event Listener functionality 
 
 const addStudent = () => {
-  const studentInfo = studentNameInput.value.toLowerCase();
-  let housePicks = houses[Math.floor.random()*(houses.length)];
+  const studentInfo = studentNameInput.value;
+  let housePicks = houses[Math.floor(Math.random() *houses.length)];
   let studentCard = `<div class="card" style="width: 18rem;">
       <h1 class="studentName">${studentInfo}</h1>
       <h3 class="houseName">${housePicks}</h3>
