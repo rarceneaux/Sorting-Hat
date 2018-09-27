@@ -50,18 +50,15 @@ const getForm = () => {
 
 const addStudent = () => {
   const studentInfo = studentNameInput.value.toLowerCase();
-  let studentCard = "";
   let housePicks = houses[Math.floor.random()*(houses.length)];
-      studentCard += `<div class="card" style="width: 18rem;">
-  <h1 class="studentName">${studentInfo}</h1>
-  <h3 class="houseName">${houses}</h3>
-  <div class="card-body">
-  <button type="submit" id="expel">Expel</button>
-  </div>
-</div>`;
-  }
+  let studentCard = `<div class="card" style="width: 18rem;">
+      <h1 class="studentName">${studentInfo}</h1>
+      <h3 class="houseName">${housePicks}</h3>
+      <div class="card-body">
+      <button type="submit" id="expel">Expel</button>
+      </div>
+    </div>`;
   printToDom(studentCard,'card');
-  
 }
 
 const makeSortWork = () =>{
