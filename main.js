@@ -12,18 +12,18 @@ document.getElementById(whereToPrint).innerHTML += stringToPrint;
 
 // add delete functions
 
-const activateDeletes = () => {
-  const deleteButtons = document.getElementsById('expel');
+// const activateDeletes = () => {
+//   const deleteButtons = document.getElementsById('expel');
 
-  for (let i = 0; i < deleteButtons.length; i++) {
-      const element = deleteButtons[i];
-      element.addEventListener("click", (e) => {
-          const buttonIClicked = e.target;
-          const cardToDelete = buttonIClicked.parentNode.parentNode;
-          cardToDelete.remove();
-      })
-  }
-}
+//   for (let i = 0; i < deleteButtons.length; i++) {
+//       const element = deleteButtons[i];
+//       element.addEventListener("click", (e) => {
+//           const buttonIClicked = e.target;
+//           const cardToDelete = buttonIClicked.parentNode.parentNode;
+//           cardToDelete.remove();
+//       })
+//   }
+// }
 
 // form
 const getForm = () => {
@@ -55,10 +55,11 @@ const addStudent = () => {
       <h1 class="studentName">${studentInfo}</h1>
       <h3 class="houseName">${housePicks}</h3>
       <div class="card-body">
-      <button type="submit" id="expel">Expel</button>
+      <button type="submit" class="expel">Expel</button>
       </div>
     </div>`;
   printToDom(studentCard,'card');
+  removeStudent();
 }
 
 const makeSortWork = () =>{
@@ -66,4 +67,17 @@ const makeSortWork = () =>{
   event.preventDefault()
   addStudent();
 })
+}
+
+const removeStudent = () => {
+  const expelButton = document.getElementsByClassName('expel');
+
+  for (let i =0; i <expelButton.length;i++){
+    const element =expelButton[i];
+     element.addEventListener('click', (e) =>{
+      const buttonIClicked = e.target;
+      const cardToDelete = buttonIClicked.parentNode.parentNode;
+      cardToDelete.remove();
+    })
+  }
 }
